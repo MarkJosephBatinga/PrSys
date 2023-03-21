@@ -59,6 +59,7 @@ export const GridSignBox = styled(Grid)(({theme}) => ({
 }));
 
 export const WelcomeText = styled(Typography)(({theme}) => ({
+    fontFamily: 'Poppins, sans-serif',
     fontWeight:800,
     color:"#1C7293",
     fontSize: "1.8rem",
