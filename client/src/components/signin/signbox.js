@@ -3,7 +3,7 @@ import { Grid } from '@mui/material'
 import GoogleIcon from '@mui/icons-material/Google';
 import Image from 'mui-image'
 import SignLogo from '../../images/sign-logo.svg'
-import * as SBDesign from './signinstyles'
+import * as SBDesign from './signin.style.js'
 
 export default function SignBox(){
 

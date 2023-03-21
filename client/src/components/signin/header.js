@@ -1,5 +1,5 @@
 import React from 'react'
-import * as HDesign from './signinstyles'
+import * as HDesign from './signin.style.js'
 
 export default function Header(){
     return(
