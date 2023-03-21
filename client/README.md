@@ -1,11 +1,3 @@
-# All Client Installations
-
-npx create-react-app .
-npm react-router-dom
-npm install @mui/material @emotion/react @emotion/styled
-npm install @mui/icons-material
-npm install @fontsource/roboto
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
