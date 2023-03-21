@@ -1,7 +1,7 @@
 import { Stack } from '@mui/material'
 import React from 'react'
-import Header from '../components/Header/header'
-import Sidebar from '../components/Sidebar/sidebar'
+import Header from '../header/header'
+import Sidebar from '../sidebar/sidebar'
 
 export default function Dashboard(){
     return(

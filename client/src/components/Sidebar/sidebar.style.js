@@ -36,16 +36,19 @@ export const SidebarItem = styled(ListItem)(({theme}) => ({
 }));
 
 export const SidebarIcon = styled(ListItemIcon)(({theme}) => ({
-    backgroundColor: "black",
+    // backgroundColor: "blue",
+    direction: "column",
+    alignItems: "center",
+    justifyContent: "center",
     "& .MuiSvgIcon-root": {
         color: "#ffffff",
-        fontSize: "1.5rem"
+        fontSize: "1.7rem",
     },
 }));
 
 export const SidebarText = styled(Typography)(({theme}) => ({
-    backgroundColor: "red",
+    // backgroundColor: "red",
     fontWeight:600,
     color:"#ffffff",
-    fontSize:"1rem",
+    fontSize:"1.2rem",
 }));

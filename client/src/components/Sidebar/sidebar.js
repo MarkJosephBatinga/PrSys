@@ -1,5 +1,5 @@
 import { DashboardOutlined, InsertDriveFileOutlined } from '@mui/icons-material'
-import {ListItem, ListItemButton} from '@mui/material'
+import {ListItemButton} from '@mui/material'
 import Image from 'mui-image'
 import DBLogo from '../../images/db-logo.svg'
 import React from 'react'
@@ -11,23 +11,19 @@ export default function Sidebar(){
             <SDesign.SideLogo>
                 <Image src={DBLogo}></Image>
             </SDesign.SideLogo>
-
+            <SDesign.Title>
+                DICT RO1
+            </SDesign.Title>
             <SDesign.SidebarList>
-                <ListItem> 
-                    <SDesign.Title>
-                        DICT RO1
-                    </SDesign.Title>
-                </ListItem>
-
                 <SDesign.SidebarItem disablePadding>
-                    <ListItemButton component="a" href="#home">
+                    <ListItemButton component="a" href={`/dashboard`}>
                         <SDesign.SidebarIcon><DashboardOutlined /></SDesign.SidebarIcon>
                         <SDesign.SidebarText>Dashboard </ SDesign.SidebarText>
                     </ListItemButton>
                 </SDesign.SidebarItem>
 
                 <SDesign.SidebarItem disablePadding>
-                    <ListItemButton component="a" href="#home">
+                    <ListItemButton component="a" href={`/`}>
                         <SDesign.SidebarIcon><InsertDriveFileOutlined /></SDesign.SidebarIcon>
                         <SDesign.SidebarText>Procurement </ SDesign.SidebarText>
                     </ListItemButton>
