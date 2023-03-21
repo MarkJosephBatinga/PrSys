@@ -1,5 +1,5 @@
 import React from 'react';
-import SignIn from './components/signin/index';
+// import SignIn from './components/SignIn/signIn';
 import { Box } from '@mui/material';
 // import Dashboard from './pages/dashboard';
 
@@ -7,8 +7,8 @@ import { Box } from '@mui/material';
 function App() {
   return (
     <Box>
-      <SignIn />
-      {/* <Dashboard /> */}
+      {/* <SignIn /> */}
+      <Dashboard />
     </Box>
   );
 }
