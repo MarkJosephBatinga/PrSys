@@ -8,28 +8,30 @@ import * as SBDesign from './signin.style.js'
 export default function SignBox(){
 
     return(
-        <SBDesign.GridSignBox container direction="column">
-            <Grid item marginBottom={2}>
-                <Image src={SignLogo} />
-            </Grid>
+        <SBDesign.SignBox>
+            <SBDesign.GridSignBox container direction="column">
+                <Grid item marginBottom={2}>
+                    <Image src={SignLogo} />
+                </Grid>
 
-            <Grid item>
-                <SBDesign.WelcomeText>
-                    Welcome back.
-                </SBDesign.WelcomeText>
-            </Grid>
+                <Grid item>
+                    <SBDesign.WelcomeText>
+                        Welcome back.
+                    </SBDesign.WelcomeText>
+                </Grid>
 
-            <Grid item>
-                <SBDesign.SignInText>
-                    Sign in to your account
-                </SBDesign.SignInText>
-            </Grid>
+                <Grid item>
+                    <SBDesign.SignInText>
+                        Sign in to your account
+                    </SBDesign.SignInText>
+                </Grid>
 
-            <Grid item>
-                <SBDesign.SignBtn variant="contained" startIcon={ <GoogleIcon />}  >
-                    Sign In with Google
-                </SBDesign.SignBtn>
-            </Grid>
-        </SBDesign.GridSignBox>
+                <Grid item>
+                    <SBDesign.SignBtn variant="contained" startIcon={ <GoogleIcon />}  >
+                        Sign In with Google
+                    </SBDesign.SignBtn>
+                </Grid>
+            </SBDesign.GridSignBox>
+        </SBDesign.SignBox>
     )
 }

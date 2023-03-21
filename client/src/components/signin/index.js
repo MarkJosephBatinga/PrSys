@@ -6,11 +6,7 @@ import { Box, Stack } from '@mui/material';
 function SignIn(){
     return (
         <Box>
-            <Stack 
-                spacing={1} 
-                justifyContent="space-between" 
-                alignItems="center"
-            >
+            <Stack height="100vh">
                 <Header />
                 <SignBox />  
                 <Footer />

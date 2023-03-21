@@ -1,22 +1,13 @@
-import { AppBar, Box, Button, Grid, styled, Typography } from "@mui/material";
+import { AppBar, Box, Button, Grid, styled, Typography, Stack } from "@mui/material";
 
 // STYLES FOR HEADER STARTS HERE
 export const HeaderBox = styled(Box)(({theme}) => ({
     backgroundColor:"#1C7293", 
-    width:"100vw",
-    marginBottom: theme.spacing(8), //100% screen responsive
-    [theme.breakpoints.up('sm')]: {
-      marginBottom: theme.spacing(20), //67% screen responsive
-    },
-    [theme.breakpoints.up('md')]: {
-        marginBottom: theme.spacing(10), //100% screen
-      },
-    [theme.breakpoints.up('xl')]: {
-      marginBottom: theme.spacing(25), // 67% screen
-    },
+    width:"100%",
 }));
 
 export const HeaderText = styled(Typography)(({theme}) => ({
+    fontFamily: 'Poppins, sans-serif',
     padding: "6px 1px",
     fontWeight:700,
     color:"#ffffff",
@@ -29,12 +20,21 @@ export const HeaderText = styled(Typography)(({theme}) => ({
         fontSize: '0.75rem',
     },
     [theme.breakpoints.up('xl')]: {
-        fontSize: '1.3rem',
+        fontSize: '1.1rem',
     },
 }));
 // STYLES FOR HEADER ENDS HERE
 
 // STYLES FOR SIGN IN BOX STARTS HERE
+export const SignBox = styled(Stack)(({theme}) => ({
+    // background: "black",
+    justifyContent: "center",
+    alignItems: "center",
+    width: '100%',
+    height: '100vh',
+}));
+
+
 export const GridSignBox = styled(Grid)(({theme}) => ({
     padding: "2.3rem", 
     justifyContent:"center", 
@@ -104,6 +104,7 @@ export const FooterBox = styled(AppBar) ({
 });
 
 export const FooterText = styled(Typography)(({theme}) => ({
+    fontFamily: 'Poppins, sans-serif',
     padding:"0.2rem",
     textAlign:"center",
     fontWeight:400,
