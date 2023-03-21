@@ -1,14 +1,14 @@
 import React from 'react';
-// import SignIn from './components/SignIn/signIn';
+import SignIn from './components/signin/index';
 import { Box } from '@mui/material';
-import Dashboard from './pages/dashboard';
+// import Dashboard from './pages/dashboard';
 
 
 function App() {
   return (
     <Box>
-      {/* <SignIn /> */}
-      <Dashboard />
+      <SignIn />
+      {/* <Dashboard /> */}
     </Box>
   );
 }
