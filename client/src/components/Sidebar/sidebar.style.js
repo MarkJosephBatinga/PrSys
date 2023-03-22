@@ -1,14 +1,29 @@
-import { Box, List, ListItem, ListItemIcon, styled, Typography, Stack } from "@mui/material";
+import { Box, List, ListItem, ListItemIcon, styled, Typography, Stack, ListItemButton} from "@mui/material";
 
-export const SidebarBox = styled(Stack)(({theme}) => ({
+export const SidebarStack = styled(Stack)(({theme}) => ({
     backgroundColor: "#1C7293",
-    padding: '1rem',
+    // padding: '1rem',
     justifyContent:"flex-start",
     alignItems: "center",
 }));
 
-export const SideLogo = styled(Box)(({theme}) => ({
+export const LogoBox = styled(Box)(({theme}) => ({
+    marginTop: "2rem",
     width: "60%",
+}));
+
+export const DBLogo = styled(ListItem)(({theme}) => ({
+    justifyContent:"center", 
+    alignItems: "center",
+    width: '80%',
+}));
+
+export const Title = styled(Typography)(({theme}) => ({
+    marginBottom: "1.5rem",
+    fontWeight:800,
+    color:"#ffffff",
+    textAlign:"center",
+    fontSize:"1.8rem",
 }));
 
 export const SidebarList = styled(List)(({theme}) => ({
@@ -16,39 +31,39 @@ export const SidebarList = styled(List)(({theme}) => ({
 }));
 
 
-export const DBLogo = styled(ListItem)(({theme}) => ({
-    width: '80%',
-    justifyContent:"center", 
-    alignItems: "center",
-}));
-
-export const Title = styled(Typography)(({theme}) => ({
-    fontWeight:800,
-    color:"#ffffff",
-    textAlign:"center",
-    fontSize:"1.8rem",
-    marginBottom: "1.5rem",
-}));
-
 export const SidebarItem = styled(ListItem)(({theme}) => ({
     padding: "0.25rem 0",
-    
+    color:"#ffffff",
+    "&:hover": {
+        backgroundColor: "#EEF8FB",
+        color:"#1C7293",
+        "& .MuiSvgIcon-root": {
+          color: "#1C7293"
+        }
+    }
+}));
+
+export const SidebarBtn = styled(ListItemButton)(({theme}) => ({
+    "&:hover": {
+        backgroundColor: "transparent",
+      }
 }));
 
 export const SidebarIcon = styled(ListItemIcon)(({theme}) => ({
-    // backgroundColor: "blue",
-    direction: "column",
-    alignItems: "center",
-    justifyContent: "center",
+    // marginRight: theme.spacing(-3),
+    // direction: "column",
+    // alignItems: "center",
+    // justifyContent: "center",
     "& .MuiSvgIcon-root": {
         color: "#ffffff",
-        fontSize: "1.7rem",
+        fontSize: "1.75rem"
     },
+    
 }));
 
 export const SidebarText = styled(Typography)(({theme}) => ({
-    // backgroundColor: "red",
     fontWeight:600,
-    color:"#ffffff",
-    fontSize:"1.2rem",
+    fontSize:"1rem",
+    primaryTypographyProps: { margin: '0 0px' },
+    secondaryTypographyProps: { margin: '0' },
 }));
