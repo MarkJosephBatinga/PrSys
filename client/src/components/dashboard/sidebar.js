@@ -1,5 +1,4 @@
-import { DashboardOutlined, InsertDriveFileOutlined } from '@mui/icons-material'
-import {ListItemButton} from '@mui/material'
+import { AssignmentOutlined, DashboardOutlined, InsertDriveFileOutlined, LocalOfferOutlined, Logout } from '@mui/icons-material'
 import Image from 'mui-image'
 import DBLogo from '../../images/db-logo.svg'
 import React from 'react'
@@ -7,29 +6,55 @@ import * as SDesign from './sidebar.style'
 
 export default function Sidebar(){
     return(
-        <SDesign.SidebarBox flex={1} >
-            <SDesign.SideLogo>
+        <SDesign.SidebarStack flex={1} >
+            <SDesign.LogoBox>
                 <Image src={DBLogo}></Image>
-            </SDesign.SideLogo>
+            </SDesign.LogoBox>
+
             <SDesign.Title>
                 DICT RO1
             </SDesign.Title>
+
+
             <SDesign.SidebarList>
-                <SDesign.SidebarItem disablePadding>
-                    <ListItemButton component="a" href={`/dashboard`}>
+
+                <SDesign.SidebarItem >
+                    <SDesign.SidebarBtn component="a" href="#home">
                         <SDesign.SidebarIcon><DashboardOutlined /></SDesign.SidebarIcon>
                         <SDesign.SidebarText>Dashboard </ SDesign.SidebarText>
-                    </ListItemButton>
+                    </SDesign.SidebarBtn>
                 </SDesign.SidebarItem>
 
                 <SDesign.SidebarItem disablePadding>
-                    <ListItemButton component="a" href={`/`}>
-                        <SDesign.SidebarIcon><InsertDriveFileOutlined /></SDesign.SidebarIcon>
+                    <SDesign.SidebarBtn component="a" href="#home">
+                        <SDesign.SidebarIcon><AssignmentOutlined /></SDesign.SidebarIcon>
                         <SDesign.SidebarText>Procurement </ SDesign.SidebarText>
-                    </ListItemButton>
+                    </SDesign.SidebarBtn>
                 </SDesign.SidebarItem>
+
+                <SDesign.SidebarItem disablePadding>
+                    <SDesign.SidebarBtn component="a" href="#home">
+                        <SDesign.SidebarIcon><InsertDriveFileOutlined /></SDesign.SidebarIcon>
+                        <SDesign.SidebarText>PPMP </ SDesign.SidebarText>
+                    </SDesign.SidebarBtn>
+                </SDesign.SidebarItem>
+
+                <SDesign.SidebarItem disablePadding>
+                    <SDesign.SidebarBtn component="a" href="#home">
+                        <SDesign.SidebarIcon><LocalOfferOutlined /></SDesign.SidebarIcon>
+                        <SDesign.SidebarText>PR</ SDesign.SidebarText>
+                    </SDesign.SidebarBtn>
+                </SDesign.SidebarItem>
+
+                <SDesign.SidebarItem disablePadding>
+                    <SDesign.SidebarBtn component="a" href="#home">
+                        <SDesign.SidebarIcon><Logout /></SDesign.SidebarIcon>
+                        <SDesign.SidebarText>Sign Out </ SDesign.SidebarText>
+                    </SDesign.SidebarBtn>
+                </SDesign.SidebarItem>
+
             </SDesign.SidebarList>
 
-        </SDesign.SidebarBox>
+        </SDesign.SidebarStack>
     )
 }
