@@ -1,7 +1,6 @@
 import app from "./server.js";
 import mongodb from "mongodb";
 import dotenv from "dotenv";
-
 import UsersData from "./models/users.model.js";
 
 dotenv.config();

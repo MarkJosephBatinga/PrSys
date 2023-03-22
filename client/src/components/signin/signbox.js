@@ -1,5 +1,6 @@
 import React from 'react'
 import { Grid } from '@mui/material'
+import axios from "axios"
 import Image from 'mui-image'
 import SignLogo from '../../images/sign-logo.svg'
 import * as SBDesign from './signin.style.js'
@@ -7,6 +8,20 @@ import { LoginSocialGoogle } from "reactjs-social-login"
 import { GoogleLoginButton } from "react-social-login-buttons"
 
 export default function SignBox(){
+
+    const login = (provider, data) => {
+        axios.post("http://localhost:5000/users", { 
+            email: data.email, 
+            family_name: data.family_name,
+            given_name: data.given_name,
+            picture: data.picture
+        })
+        .then(() => {
+            console.log("ok");
+        });
+        console.log(provider, data);
+        console.log(data.email);
+    }
 
     return(
         <SBDesign.SignBox>
@@ -36,7 +51,7 @@ export default function SignBox(){
                         discoveryDocs="claims_supported"
                         access_type='offline'
                         onResolve={({ provider, data }) => {
-                            console.log(provider, data);
+                            login(provider, data)
                         }}
                         onReject={(err) => {
                             console.log(err);
