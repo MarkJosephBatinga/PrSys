@@ -1,7 +1,8 @@
 import { Stack } from '@mui/material'
 import React from 'react'
-import Header from '../header/header'
-import Sidebar from '../sidebar/sidebar'
+import Header from './header'
+import Sidebar from './sidebar'
+import Body from './body'
 
 export default function Dashboard(){
     return(
@@ -10,6 +11,7 @@ export default function Dashboard(){
 
             <Stack flex={6}>
                 <Header />
+                <Body />
             </Stack>
         </Stack>
     )
