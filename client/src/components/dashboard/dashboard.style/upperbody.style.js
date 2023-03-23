@@ -1,28 +1,31 @@
 import {
-    Grid,
     styled,
     Box,
+    Stack,
 } from '@mui/material'
 
 // UPPER BODY STYLE STARTS HERE
-export const UpperContent = styled(Box)(({theme}) => ({
+export const UpperContentStack = styled(Stack)(({theme}) => ({
     width: '100%',
-    height: '20%',
+    height: '24vh',
+    alignContent:'center',
+    justifyContent:'center',
 }));
 
-export const UpperContentBoxWrapper = styled(Grid)(({theme}) => ({
-    paddingTop:'10px',
+export const UpperContentBoxWrapperStack = styled(Stack)(({theme}) => ({
+    paddingTop:'30px',
     display:'flex',
-    width: "100%",
+    width: "50%",
+    height: '18vh',
     justifyContent:'space-around',
-    alignItems: 'flex-end',
+    alignItems: 'center',
 }));
 
 export const UpperContentBox = styled(Box)(({theme}) => ({
     display:'flex',
     alignItems:'center',
     justifyContent:'center',
-    width: '21.5%',
+    width: '40%',
     border: 'solid 2px',
     borderRadius: '10px',
     height: '18vh',

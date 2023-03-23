@@ -1,5 +1,5 @@
 import React from 'react'
-import * as HeadDesign from './header.style'
+import * as HeadDesign from './dashboard.style/header.style'
 import AccountIcon from '@mui/icons-material/AccountCircleOutlined';
 import NotifIcon from '@mui/icons-material/NotificationsNoneOutlined';
 

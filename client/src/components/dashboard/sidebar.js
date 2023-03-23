@@ -2,7 +2,7 @@ import { AssignmentOutlined, DashboardOutlined, InsertDriveFileOutlined, LocalOf
 import Image from 'mui-image'
 import DBLogo from '../../images/db-logo.svg'
 import React from 'react'
-import * as SDesign from './sidebar.style'
+import * as SDesign from './dashboard.style/sidebar.style'
 
 export default function Sidebar(){
     return(
