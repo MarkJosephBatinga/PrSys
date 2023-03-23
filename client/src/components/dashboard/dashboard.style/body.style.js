@@ -3,15 +3,15 @@ import {
     styled,
 } from '@mui/material'
 
-// BODDY TEXT STYLE STARTS HERE
+// BOLD TEXT
 export const BoldText = styled(Typography)(({theme}) => ({
-    paddingLeft: '20px',
     paddingTop:'20px',
     fontFamily: 'Poppins, sans-serif',
     textAlign:"left",
     fontWeight:600,
     [theme.breakpoints.up('xs')]: {
-        fontSize: '0.50rem',
+        fontSize: '0.75rem',
+        paddingLeft: '1.3%',
     },
     [theme.breakpoints.up('sm')]: {
         fontSize: '0.75rem',
@@ -27,45 +27,85 @@ export const BoldText = styled(Typography)(({theme}) => ({
     }
 }));
 
+// NUMBER TEXT YELLOW
 export const BoxNumbertext1 = styled(Typography)(({theme}) => ({
     fontFamily: 'Poppins, sans-serif',
     textAlign:'center',
     fontWeight:800,
     color:"#FACF5A",
     fontSize: "1.8rem",
-    [theme.breakpoints.up('xl')]: {
-        fontSize: '2.2rem',
+    [theme.breakpoints.up('xs')]: {
+        fontSize: '1.4rem',
     },
+    [theme.breakpoints.up('sm')]: {
+        fontSize: '1.4rem',
+    },
+    [theme.breakpoints.up('md')]: {
+        fontSize: '2rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+        fontSize: '2.5rem',
+    },
+    [theme.breakpoints.up('xl')]: {
+        fontSize: '2.5rem',
+    }
 }));
 
+// NUMBER TEXT BLUE
 export const BoxNumbertext2 = styled(Typography)(({theme}) => ({
     fontFamily: 'Poppins, sans-serif',
     textAlign:'center',
     fontWeight:800,
     color:"#1C7293",
     fontSize: "1.8rem",
-    [theme.breakpoints.up('xl')]: {
-        fontSize: '2.2rem',
+    [theme.breakpoints.up('xs')]: {
+        fontSize: '1.4rem',
     },
+    [theme.breakpoints.up('sm')]: {
+        fontSize: '1.4rem',
+    },
+    [theme.breakpoints.up('md')]: {
+        fontSize: '2rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+        fontSize: '2.5rem',
+    },
+    [theme.breakpoints.up('xl')]: {
+        fontSize: '2.5rem',
+    }
 }));
 
+// NUMBER TEXT RED
 export const BoxNumbertext3 = styled(Typography)(({theme}) => ({
     fontFamily: 'Poppins, sans-serif',
     textAlign:'center',
     fontWeight:800,
     color:"#FF5959",
     fontSize: "1.8rem",
-    [theme.breakpoints.up('xl')]: {
-        fontSize: '2.2rem',
+    [theme.breakpoints.up('xs')]: {
+        fontSize: '1.4rem',
     },
+    [theme.breakpoints.up('sm')]: {
+        fontSize: '1.4rem',
+    },
+    [theme.breakpoints.up('md')]: {
+        fontSize: '2rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+        fontSize: '2.5rem',
+    },
+    [theme.breakpoints.up('xl')]: {
+        fontSize: '2.5rem',
+    }
 }));
 
+// TEXT INSIDE THE BOX
 export const BoxText = styled(Typography)(({theme}) => ({
     fontFamily: 'Poppins, sans-serif',
     textAlign:"center",
-    fontWeight:600,
+    fontWeight:500,
     [theme.breakpoints.up('xs')]: {
-        fontSize: '0.50rem',
+        fontSize: '0.75rem',
     },
     [theme.breakpoints.up('sm')]: {
         fontSize: '0.75rem',

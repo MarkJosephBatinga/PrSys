@@ -4,7 +4,7 @@ import {
     Grid,
 } from '@mui/material'
 
-// BODY HEADER STARTS HERE
+// HEADER WRAPPER
 export const DashHeader = styled(Grid)(({theme}) => ({
     width: "100%",
     marginTop: "20px",
@@ -14,6 +14,7 @@ export const DashHeader = styled(Grid)(({theme}) => ({
     paddingRight:'30px'
 }));
 
+// ICON WRAPPER
 export const HeaderIconWrapper = styled(Box)(({ theme }) => ({
     height: '100%',
     display: 'flex',

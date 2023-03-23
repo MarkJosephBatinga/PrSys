@@ -7,16 +7,18 @@ import { Stack } from "@mui/system";
 
 export default function Body(){
     return(
-        <Stack direction='column' spacing={0}>
-
+        <Stack>
             <TextDesign.BoldText>
                 Here's an overview of today's report
             </TextDesign.BoldText>
 
-                <UpperBodyDesign.UpperContentStack direction={{xs:'column', sm:'row'}}>
-                    <UpperBodyDesign.UpperContentBoxWrapperStack direction='row'>
+                {/*START OF OUTER STACK */}
+                <UpperBodyDesign.UpperContentStack direction={{xs:'column', md:'row', }}>
+
+                    {/* START OF FIRST BOX WRAPPER */}
+                    <UpperBodyDesign.UpperContentBoxWrapperStack1 direction='row'>
                         <UpperBodyDesign.UpperContentBox>
-                            <Stack spacing={2}>
+                            <Stack spacing={2} >
                                 <TextDesign.BoxNumbertext1>
                                     30
                                 </TextDesign.BoxNumbertext1>
@@ -26,7 +28,7 @@ export default function Body(){
                             </Stack>
                         </UpperBodyDesign.UpperContentBox>
                         <UpperBodyDesign.UpperContentBox>
-                            <Stack spacing={2}>
+                            <Stack spacing={2} >
                                 <TextDesign.BoxNumbertext2>
                                     40
                                 </TextDesign.BoxNumbertext2>
@@ -35,11 +37,13 @@ export default function Body(){
                                 </TextDesign.BoxText>
                             </Stack>
                         </UpperBodyDesign.UpperContentBox>
-                    </UpperBodyDesign.UpperContentBoxWrapperStack>
+                    </UpperBodyDesign.UpperContentBoxWrapperStack1>
+                    {/* END OF FIRST BOX WRAPPER */}
 
-                    <UpperBodyDesign.UpperContentBoxWrapperStack direction='row'>
+                    {/* START OF SECOND BOX WRAPPER */}
+                    <UpperBodyDesign.UpperContentBoxWrapperStack2 direction='row' justifyContent='flex-start'>
                         <UpperBodyDesign.UpperContentBox>
-                            <Stack spacing={2}>
+                            <Stack spacing={2} >
                                 <TextDesign.BoxNumbertext3>
                                     10
                                 </TextDesign.BoxNumbertext3>
@@ -49,7 +53,7 @@ export default function Body(){
                             </Stack>
                         </UpperBodyDesign.UpperContentBox>
                         <UpperBodyDesign.UpperContentBox>
-                            <Stack spacing={2}>
+                            <Stack spacing={2} >
                                 <TextDesign.BoxNumbertext1>
                                     5
                                 </TextDesign.BoxNumbertext1>
@@ -58,11 +62,16 @@ export default function Body(){
                                 </TextDesign.BoxText>
                             </Stack>
                         </UpperBodyDesign.UpperContentBox>
-                    </UpperBodyDesign.UpperContentBoxWrapperStack>
-                </UpperBodyDesign.UpperContentStack>
+                    </UpperBodyDesign.UpperContentBoxWrapperStack2>
+                    {/* END OF SECOND BOX WRAPPER */}
 
+                </UpperBodyDesign.UpperContentStack>
+                {/* END OF OUTER STACK */}
+
+             {/* START OF LOWER BODY    */}
             <LowerBodyDesign.LowerBody>
             </LowerBodyDesign.LowerBody>
+            {/* END OF LOWER BODY */}
         </Stack>
     )
 }
