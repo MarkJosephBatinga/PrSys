@@ -9,6 +9,8 @@ npm install @fontsource/roboto
 npm install axios
 npm install universal-cookie
 
+npm install firebase
+
 # All Server Installations
 
 npm init -y

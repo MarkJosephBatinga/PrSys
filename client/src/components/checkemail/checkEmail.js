@@ -1,6 +1,6 @@
-import Header from './header';
+import Header from '../signin/header';
 import CheckEmailBody from './checkEmailBody';
-import Footer from './footer';
+import Footer from '../signin/footer';
 import { Box, Stack } from '@mui/material';
 
 function checkEmail(){

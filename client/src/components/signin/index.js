@@ -1,5 +1,5 @@
 import Header from './header';
-import SignBox from './signbox';
+import {SignBox} from './signbox';
 import Footer from './footer';
 import { Box, Stack } from '@mui/material';
 
