@@ -1,6 +1,7 @@
 import { Box, List, ListItem, ListItemIcon, styled, Typography, Stack, ListItemButton} from "@mui/material";
 
 export const SidebarStack = styled(Stack)(({theme}) => ({
+    flex: "1.2",
     backgroundColor: "#1C7293",
     // padding: '1rem',
     justifyContent:"flex-start",
@@ -27,12 +28,13 @@ export const Title = styled(Typography)(({theme}) => ({
 }));
 
 export const SidebarList = styled(List)(({theme}) => ({
-    justifyContent:"center", 
+    width: "100%",
+    justifyContent:"center",
 }));
 
 
 export const SidebarItem = styled(ListItem)(({theme}) => ({
-    padding: "0.25rem 0",
+    padding: "0.25rem 5%",
     color:"#ffffff",
     "&:hover": {
         backgroundColor: "#EEF8FB",

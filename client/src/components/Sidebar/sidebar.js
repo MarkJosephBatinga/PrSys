@@ -19,7 +19,7 @@ export default function Sidebar(){
     }
     
     return(
-        <SDesign.SidebarStack flex={1} >
+        <SDesign.SidebarStack >
             <SDesign.LogoBox>
                 <Image src={DBLogo}></Image>
             </SDesign.LogoBox>
