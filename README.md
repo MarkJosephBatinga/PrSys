@@ -25,3 +25,7 @@ npm i reactjs-social-login react-social-login-buttons
 # PrSys
 
 Procurement System for Department of Information and Communications Technology
+
+# pass
+
+dict_prsys2023

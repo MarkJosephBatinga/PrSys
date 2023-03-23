@@ -3,8 +3,21 @@ import Image from 'mui-image'
 import DBLogo from '../../images/db-logo.svg'
 import React from 'react'
 import * as SDesign from './sidebar.style'
+import { auth } from "../../firebase"
+import { useNavigate }from "react-router-dom"
 
 export default function Sidebar(){
+    
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        auth.signOut()
+        .then(() => {
+            console.log("Successfully Logout")
+            navigate("/");
+        })
+    }
+    
     return(
         <SDesign.SidebarStack flex={1} >
             <SDesign.LogoBox>
@@ -47,7 +60,7 @@ export default function Sidebar(){
                 </SDesign.SidebarItem>
 
                 <SDesign.SidebarItem disablePadding>
-                    <SDesign.SidebarBtn component="a" href="#home">
+                    <SDesign.SidebarBtn component="a" onClick={handleLogout}>
                         <SDesign.SidebarIcon><Logout /></SDesign.SidebarIcon>
                         <SDesign.SidebarText>Sign Out </ SDesign.SidebarText>
                     </SDesign.SidebarBtn>
