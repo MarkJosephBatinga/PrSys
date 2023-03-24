@@ -11,7 +11,7 @@ export const UpperContentStack = styled(Stack)(({theme}) => ({
     // height: '24vh',
     alignContent:'center',
     justifyContent:'space-between',
-    backgroundColor:'blue',
+    // backgroundColor:'blue',
     // border:'solid 1px',
 }));
 
@@ -44,25 +44,26 @@ export const UpperContentBox = styled(Box)(({theme}) => ({
     display:'flex',
     border: 'solid 2px',
     borderRadius: '10px',
+    padding: "0.6rem 0",
     // backgroundColor:'green',
     [theme.breakpoints.up('xs')]: {
         alignItems:'center',
         justifyContent:'flex-end',
         width: '46%',
-        height: '9vh',
+        // height: '9vh',
     },
     [theme.breakpoints.up('sm')]: {
         alignItems:'center',
         justifyContent:'center',
         width: '46%',
-        height: '9vh',
+        // height: '9vh',
     },
     [theme.breakpoints.up('md')]: {
         width: '44%',
-        height: '15vh',
+        // height: '15vh',
     },
     [theme.breakpoints.up('xl')]: {
         width: '45%',
-        height: '15vh',
+        // height: '15vh',
     },
 }))
