@@ -1,10 +1,11 @@
 import { CircleNotifications } from '@mui/icons-material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBackIos';
 import {styled, Box, Grid, Avatar, Paper, InputBase} from '@mui/material'
 
 // HEADER WRAPPER
 export const HeaderGrid = styled(Grid)(({theme}) => ({
     display: "flex",
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
     padding: "1rem",
     // backgroundColor: "pink"
 }));
@@ -15,6 +16,7 @@ export const HeaderBox = styled(Box)(({ theme }) => ({
     alignItems: 'center',
     justifyContent: 'center',
     gap: '1rem',
+    // backgroundColor: "red"
 }));
 
 export const SearchPaper = styled(Paper)(({ theme }) => ({
@@ -67,3 +69,14 @@ export const Notification = styled(CircleNotifications)(({ theme }) => ({
     },
 }));
 
+// HEADER WITH BACK BUTTON STARTS HERE
+// HEADER WRAPPER
+export const BackButton = styled(ArrowBackIcon)(({ theme }) => ({
+    fontSize: "2.2rem",
+    [theme.breakpoints.up('md')]: {
+        fontSize: '3rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+        fontSize: '2.2rem',
+    },
+}));

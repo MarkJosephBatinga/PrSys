@@ -3,29 +3,6 @@ import {
     styled,
 } from '@mui/material'
 
-// BOLD TEXT
-export const BoldText = styled(Typography)(({theme}) => ({
-    fontFamily: 'Poppins, sans-serif',
-    textAlign:"left",
-    fontWeight:600,
-    [theme.breakpoints.up('xs')]: {
-        fontSize: '0.75rem',
-        paddingLeft: '1.3%',
-    },
-    [theme.breakpoints.up('sm')]: {
-        fontSize: '0.75rem',
-    },
-    [theme.breakpoints.up('md')]: {
-        fontSize: '0.75rem',
-    },
-    [theme.breakpoints.up('lg')]: {
-        fontSize: '1rem',
-    },
-    [theme.breakpoints.up('xl')]: {
-        fontSize: '1rem',
-    }
-}));
-
 // NUMBER TEXT YELLOW
 export const BoxNumbertext1 = styled(Typography)(({theme}) => ({
     fontFamily: 'Poppins, sans-serif',

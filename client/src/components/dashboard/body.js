@@ -2,6 +2,7 @@ import React from "react";
 import * as UpperBodyDesign from './dashboard.style/upperbody.style'
 import * as LBDesign from './dashboard.style/lowerbody.style'
 import * as TextDesign from "./dashboard.style/body.style";
+import * as TitleDesign from '../typography/textDesign'
 import { Stack } from "@mui/system";
 import { Table, TableBody, TableContainer,} from "@mui/material";
 
@@ -23,9 +24,9 @@ export default function Body(){
 
     return(
         <Stack>
-            <TextDesign.BoldText>
+            <TitleDesign.BoldText>
                 Here's an overview of today's report
-            </TextDesign.BoldText>
+            </TitleDesign.BoldText>
 
                 {/*START OF OUTER STACK */}
                 <UpperBodyDesign.UpperContentStack direction={{xs:'column', md:'row', }}>
@@ -73,7 +74,7 @@ export default function Body(){
                                     5
                                 </TextDesign.BoxNumbertext1>
                                 <TextDesign.BoxText>
-                                    On-going Procurements
+                                    Di ko Alam
                                 </TextDesign.BoxText>
                             </Stack>
                         </UpperBodyDesign.UpperContentBox>

@@ -3,7 +3,7 @@ import {useAuthState} from 'react-firebase-hooks/auth';
 import { useNavigate } from "react-router-dom";
 import { auth } from '../../firebase';
 import React, { useEffect } from 'react'
-import Header from './header'
+import Header from '../header/header'
 import Sidebar from '../sidebar/sidebar'
 import Body from './body'
 
