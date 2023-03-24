@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBG7MQA9W3o6I3PEAteMxFFxVE1grZ783k",
-  authDomain: "dict-prsys.firebaseapp.com",
-  projectId: "dict-prsys",
-  storageBucket: "dict-prsys.appspot.com",
-  messagingSenderId: "845655359108",
-  appId: "1:845655359108:web:4e5cc61bc81f4773838cd1",
-  measurementId: "G-DQBVBFSR7L"
+  apiKey: "AIzaSyBfmDiWf26fn2_TH0tAFVYOkgsJwWsx1lI",
+  authDomain: "dict-proc.firebaseapp.com",
+  projectId: "dict-proc",
+  storageBucket: "dict-proc.appspot.com",
+  messagingSenderId: "905803102754",
+  appId: "1:905803102754:web:f9714f9a01a82a927a687b",
+  measurementId: "G-R8QSWQ5QV4"
 };
 
 // Initialize Firebase

@@ -17,29 +17,38 @@ export default class UsersController {
             const picture = req.body.picture
             const date = new Date()
 
-            const userResponse = await UsersModel.addReview(
+            const userResponse = await UsersModel.addUser(
                 email,
                 family_name,
                 given_name,
                 picture,
                 date
             )
-             
-            const params = {
-                email,
-                login_magic_link_url: "http://localhost:3000/dashboard",
-                signup_magic_link_url: "http://localhost:3000/dashboard"
-            }
-
-            const linkResponse = await stytchClient.magicLinks.email.loginOrCreate(params)
             res.json({status: "success"})
         } catch (e) {
             res.status(500).json({error: e.message})
         }
     }
+    // apiGetUsersById
+    static async apiGetUsersByEmail(req, res, next) {
+        try{
+        let email = req.query.email || {}
+
+        console.log(email)
+        const user = await UsersModel.getUser({email})
+        if(!user) {
+            res.status(404).json({error: "Not Found"})
+            return
+        }
+        res.json(user)
+        } catch (e) {
+            console.log(`api : ${e}`)
+            res.status(500).json({ error: e })
+        }
+    }
 }
 
-// apiGetUsersById
+
 
 
 // apiGetUsers

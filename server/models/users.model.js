@@ -17,7 +17,7 @@ export default class UsersData{
         }
     }
 
-    static async addReview(email, family_name, given_name, picture, date) {
+    static async addUser(email, family_name, given_name, picture, date) {
         try {
             const userDoc = {
                 email: email,
@@ -31,6 +31,33 @@ export default class UsersData{
         } catch (e) {
             console.error(`Unable to post review: ${e}`)
             return {error: e}
+        }
+    }
+
+    static async getUser({email} = {}) {
+
+        let query;
+        query = {"email": { $eq: email}};
+        let cursor;
+
+        try {
+            cursor = await users.find(query);
+        }catch (e) {
+            console.error(`Unable to issue find command, ${e}`)
+            return {user: null};
+        }
+
+        const displayCursor = cursor.limit(1);
+
+        try {
+            const user = await displayCursor.toArray();
+
+            return user;
+        } catch {
+            console.error(
+                `Unable to convert cursor to object ${e}`
+            )
+            return {user: null}
         }
     }
 }

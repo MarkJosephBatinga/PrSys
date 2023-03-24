@@ -9,7 +9,7 @@ import { GoogleLoginButton } from "react-social-login-buttons"
 import {useAuthState} from "react-firebase-hooks/auth"
 import {sendSignInLinkToEmail, isSignInWithEmailLink, signInWithEmailLink} from "firebase/auth"
 import {auth} from "../../firebase"
-import {useNavigate, useLocation} from "react-router-dom"
+import {useNavigate, useLocation } from "react-router-dom"
 
 export const SignBox = () => {
 
@@ -25,50 +25,75 @@ export const SignBox = () => {
     const {search} = location;
     const navigate = useNavigate();
 
+
     useEffect(() => {
-        if(user) {
-            // user is already signed in
-            navigate('/dashboard');
+        if(user)
+        {
+            navigate('/dashboard')
         }
-        else {
-            // user is not signed in but the link is valid
-            if(isSignInWithEmailLink(auth, window.location.href)){
-                // check if user clicks the link on the same device
-                let email = localStorage.getItem('email');
-                if(!email) {
-                    email = window.prompt('Please provide your email');
-                }
-                
-                // Login Process
-                setInitialLoading(true);
-                signInWithEmailLink(auth, localStorage.getItem('email'), window.location.href)
-                .then((result) => {
-                    // get the result of the user
-                    console.log(result.user);
-                    localStorage.removeItem('email');
-                    setInitialLoading(false);
-                    setInitialError('');
-                    navigate("/dashboard");
-                }).catch((err) => {
-                    setInitialLoading(false);
-                    setInitialError(err.message);
-                    navigate('/');
-                })
+    }, [user, navigate])
+
+    useEffect(() => {
+        // user is not signed in but the link is valid
+        if(isSignInWithEmailLink(auth, window.location.href)){
+            // check if user clicks the link on the same device
+            let email = localStorage.getItem('email');
+            if(!email) {
+                email = window.prompt('Please provide your email');
             }
+            
+            // Login Process
+            setInitialLoading(true);
+            signInWithEmailLink(auth, localStorage.getItem('email'), window.location.href)
+            .then((result) => {
+                // Check if user is in the database
+                // let data = localStorage.getItem('data');
+                // loginDbUser(data);
+
+                localStorage.removeItem('email');
+                setInitialLoading(false);
+                setInitialError('');
+                navigate("/dashboard");
+            }).catch((err) => {
+                setInitialLoading(false);
+                setInitialError(err.message);
+                navigate('/');
+            })
         }
-    }, [user, search, navigate])
+    }, [search, navigate])
+
+
+    // const loginDbUser = (data) => {
+    //     let dbUser;
+    //     let parseData;
+    //     axios.get(`http://localhost:5000/users/email?email=${localStorage.getItem('email')}`)
+    //     .then((response) => {
+    //         console.log(response.data);
+    //         dbUser = response.data;
+    //     })
+    //     .catch((e) => {
+    //         console.log(`get user error: ${e}`);
+    //     })
+
+    //     if(dbUser == null)
+    //     {
+    //         parseData = JSON.parse(data);
+    //          axios.post("http://localhost:5000/users", { 
+    //             email: parseData.email, 
+    //             family_name: parseData.family_name,
+    //             given_name: parseData.given_name,
+    //             picture: parseData.picture
+    //         })
+    //         .then(() => {
+    //             console.log("ok");
+    //         })
+    //         .catch((e) => {
+    //             console.log(`set user error: ${e}`);
+    //         })
+    //     }
+    // }
 
     const login = (provider, data) => {
-        // axios.post("http://localhost:5000/users", { 
-        //     email: data.email, 
-        //     family_name: data.family_name,
-        //     given_name: data.given_name,
-        //     picture: data.picture
-        // })
-        // .then(() => {
-        //     console.log("ok");
-        // });
-        // console.log(provider, data);
         setLoginLoading(true);
         sendSignInLinkToEmail(auth, data.email, {
             //this is the URL that we will redirect back after clicking on the link in mailbox
@@ -76,6 +101,7 @@ export const SignBox = () => {
             handleCodeInApp: true,
         }).then(() => {
             localStorage.setItem("email", data.email);
+            // localStorage.setItem("data", JSON.stringify(data));
             setLoginLoading(false);
             setLoginError('');
             navigate('/checkemail')
@@ -85,7 +111,8 @@ export const SignBox = () => {
         })
     }
 
-    return(
+
+return(
         <div>
             {initialLoading? (
                 <div>
@@ -101,7 +128,7 @@ export const SignBox = () => {
                         <div>
                              {user? (
                                 <div>
-                                        Please Wait...
+                                    Please Wait...
                                 </div>
                                 ): (
                                 <SBDesign.SignBox>

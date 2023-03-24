@@ -3,7 +3,7 @@ import UsersController from "../controllers/users.controller.js";
 
 const router = express.Router();
 
-// router.route("/id/:id").get(UsersCtrl.apiGetUsersById);
+router.route("/email/").get(UsersController.apiGetUsersByEmail);
 
 router.route("/")
     // .get(UsersCtrl.apiGetUsers)

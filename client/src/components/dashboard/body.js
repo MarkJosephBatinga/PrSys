@@ -5,20 +5,22 @@ import * as TextDesign from "./dashboard.style/body.style";
 import { Stack } from "@mui/system";
 import { Table, TableBody, TableContainer,} from "@mui/material";
 
-//procNum, name, mode, status, date
-function createData(procNum, name, mode, status, date) {
-    return {procNum, name, mode, status, date};
-}
-
-const rows= [
-    createData('R1-2023-03-004', 'Procurement 1', 'Small Value Procurement', 'On-going', 'March 12, 2023'),
-    createData('R1-2023-03-005', 'Procurement 2', 'Small Value Procurement', 'On-going', 'March 13, 2023'),
-    createData('R1-2023-03-006', 'Procurement 3', 'Small Value Procurement', 'On-going', 'March 14, 2023'),
-    createData('R1-2023-03-007', 'Procurement 4', 'Small Value Procurement', 'On-going', 'March 15, 2023'),
-    createData('R1-2023-03-008', 'Procurement 5', 'Small Value Procurement', 'On-going', 'March 16, 2023'),
-];
 
 export default function Body(){
+    
+    //procNum, name, mode, status, date
+    function createData(procNum, name, mode, status, date) {
+        return {procNum, name, mode, status, date};
+    }
+
+    const rows= [
+        createData('R1-2023-03-004', 'Procurement 1', 'Small Value Procurement', 'On-going', 'March 12, 2023'),
+        createData('R1-2023-03-005', 'Procurement 2', 'Small Value Procurement', 'On-going', 'March 13, 2023'),
+        createData('R1-2023-03-006', 'Procurement 3', 'Small Value Procurement', 'On-going', 'March 14, 2023'),
+        createData('R1-2023-03-007', 'Procurement 4', 'Small Value Procurement', 'On-going', 'March 15, 2023'),
+        createData('R1-2023-03-008', 'Procurement 5', 'Small Value Procurement', 'On-going', 'March 16, 2023'),
+    ];
+
     return(
         <Stack>
             <TextDesign.BoldText>
