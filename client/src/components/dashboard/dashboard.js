@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from '../../firebase';
 import React, { useEffect } from 'react'
 import Header from './header'
-import Sidebar from '../sidebar/sidebar'
+import Sidebar from '../Sidebar/sidebar'
 import Body from './body'
 
 export default function Dashboard(){
