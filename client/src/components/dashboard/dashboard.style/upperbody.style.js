@@ -6,11 +6,12 @@ import {
 
 // OUTER BOX WRAPPER
 export const UpperContentStack = styled(Stack)(({theme}) => ({
-    width: '100%',
-    height: '24vh',
+    // width: '100%',
+    padding: "1rem 0",
+    // height: '24vh',
     alignContent:'center',
     justifyContent:'space-between',
-    // backgroundColor:'blue',
+    backgroundColor:'blue',
     // border:'solid 1px',
 }));
 
