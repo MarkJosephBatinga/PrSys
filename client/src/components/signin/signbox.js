@@ -1,6 +1,6 @@
 import React, {useState, useEffect}  from 'react'
 import { Grid, Typography } from '@mui/material'
-// import axios from "axios"
+import axios from "axios"
 import Image from 'mui-image'
 import SignLogo from '../../images/sign-logo.svg'
 import * as SBDesign from './signin.style.js'
@@ -20,11 +20,10 @@ export const SignBox = () => {
     
     const [ initialLoading, setInitialLoading ] = useState(false)
     const [ initialError, setInitialError ] = useState('')
-    
+
     const location = useLocation();
     const {search} = location;
     const navigate = useNavigate();
-
 
     useEffect(() => {
         if(user)
@@ -63,37 +62,23 @@ export const SignBox = () => {
     }, [search, navigate])
 
 
-    // const loginDbUser = (data) => {
-    //     let dbUser;
-    //     let parseData;
-    //     axios.get(`http://localhost:5000/users/email?email=${localStorage.getItem('email')}`)
-    //     .then((response) => {
-    //         console.log(response.data);
-    //         dbUser = response.data;
-    //     })
-    //     .catch((e) => {
-    //         console.log(`get user error: ${e}`);
-    //     })
+    const loginDbUser = (data) => {
+        axios.post("http://localhost:5000/users", { 
+            email: data.email, 
+            family_name: data.family_name,
+            given_name: data.given_name,
+            picture: data.picture
+        })
+        .then(() => {
+            console.log("ok");
+            firebaseLogin(data)
+        })
+        .catch((e) => {
+            console.log(`set user error: ${e}`);
+        })
+    }
 
-    //     if(dbUser == null)
-    //     {
-    //         parseData = JSON.parse(data);
-    //          axios.post("http://localhost:5000/users", { 
-    //             email: parseData.email, 
-    //             family_name: parseData.family_name,
-    //             given_name: parseData.given_name,
-    //             picture: parseData.picture
-    //         })
-    //         .then(() => {
-    //             console.log("ok");
-    //         })
-    //         .catch((e) => {
-    //             console.log(`set user error: ${e}`);
-    //         })
-    //     }
-    // }
-
-    const login = (provider, data) => {
+    const firebaseLogin = (data) => {
         setLoginLoading(true);
         sendSignInLinkToEmail(auth, data.email, {
             //this is the URL that we will redirect back after clicking on the link in mailbox
@@ -109,6 +94,26 @@ export const SignBox = () => {
             setLoginLoading(false);
             setLoginError(err.message);
         })
+    }
+
+    const login = (data) => {
+        axios.get(`http://localhost:5000/users/email?email=${data.email}`)
+            .then((response) => {
+                if(response.data.length === 0) {
+                    console.log("No response");
+                    loginDbUser(data);
+                }
+                else {
+                    console.log(response.data);
+                    firebaseLogin(data);
+                }
+            })
+            .catch((e) => {
+                console.log(`get user error: ${e}`);
+            })
+
+           
+        
     }
 
 
@@ -158,7 +163,7 @@ return(
                                                 discoveryDocs="claims_supported"
                                                 access_type='offline'
                                                 onResolve={({ provider, data }) => {
-                                                    login(provider, data)
+                                                    login(data)
                                                 }}
                                                 onReject={(err) => {
                                                     console.log(err);
