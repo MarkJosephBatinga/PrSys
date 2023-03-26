@@ -1,6 +1,7 @@
 import { Box, List, ListItem, ListItemIcon, styled, Typography, Stack, ListItemButton} from "@mui/material";
 
 export const SidebarStack = styled(Stack)(({theme}) => ({
+    width: '30%',
     backgroundColor: "#1C7293",
     // padding: '1rem',
     justifyContent:"flex-start",

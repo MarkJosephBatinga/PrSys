@@ -54,7 +54,6 @@ export default function Sidebar(){
                 </SDesign.SidebarItem>
 
             </SDesign.SidebarList>
-
         </SDesign.SidebarStack>
     )
 }

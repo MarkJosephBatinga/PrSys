@@ -28,7 +28,7 @@ export const SignBox = () => {
     useEffect(() => {
         if(user)
         {
-            navigate('/dashboard')
+            navigate('/user/dashboard')
         }
     }, [user, navigate])
 
@@ -52,7 +52,7 @@ export const SignBox = () => {
                 localStorage.removeItem('email');
                 setInitialLoading(false);
                 setInitialError('');
-                navigate("/dashboard");
+                navigate("/user/dashboard");
             }).catch((err) => {
                 setInitialLoading(false);
                 setInitialError(err.message);
