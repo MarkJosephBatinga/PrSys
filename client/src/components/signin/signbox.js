@@ -79,7 +79,6 @@ export const SignBox = () => {
     }
 
     const firebaseLogin = (data) => {
-        setLoginLoading(true);
         sendSignInLinkToEmail(auth, data.email, {
             //this is the URL that we will redirect back after clicking on the link in mailbox
             url: 'http://localhost:3000/',
@@ -99,12 +98,11 @@ export const SignBox = () => {
     const login = (data) => {
         axios.get(`http://localhost:5000/users/email?email=${data.email}`)
             .then((response) => {
+                setLoginLoading(true);
                 if(response.data.length === 0) {
-                    console.log("No response");
                     loginDbUser(data);
                 }
                 else {
-                    console.log(response.data);
                     firebaseLogin(data);
                 }
             })

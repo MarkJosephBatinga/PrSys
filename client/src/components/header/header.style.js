@@ -1,36 +1,33 @@
 import { CircleNotifications } from '@mui/icons-material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBackIos';
-import {styled, Box, Grid, Avatar, Paper, InputBase} from '@mui/material'
+import {styled, Stack, Avatar, Paper, InputBase} from '@mui/material'
 
 // HEADER WRAPPER
-export const HeaderGrid = styled(Grid)(({theme}) => ({
-    display: "flex",
-    justifyContent: 'space-between',
-    padding: "1rem",
-    // backgroundColor: "pink"
+export const HeaderStack = styled(Stack)(({theme}) => ({
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: '20px',
 }));
 
 //ICON WRAPPER
-export const HeaderBox = styled(Box)(({ theme }) => ({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+export const NotifStack = styled(Stack)(({ theme }) => ({
+    flexDirection: "row",
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
     gap: '1rem',
-    // backgroundColor: "red"
+}));
+
+//SEARCH WRAPPER
+export const SearchStack = styled(Stack)(({ theme }) => ({
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
 }));
 
 export const SearchPaper = styled(Paper)(({ theme }) => ({
     border: "0.1rem solid #000000",
     borderRadius: "0.4rem",
     display: 'flex', 
-    width: 230,
-    height: "70%",
-    [theme.breakpoints.up('md')]: {
-        height: "80%",
-    },
-    [theme.breakpoints.up('lg')]: {
-        height: "70%",
-    },
 }));
 
 export const SearchInput = styled(InputBase)(({ theme }) => ({
