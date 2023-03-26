@@ -7,7 +7,6 @@ import { auth } from "../../firebase"
 import { useNavigate }from "react-router-dom"
 
 export default function Sidebar(){
-    
     const navigate = useNavigate();
 
     const handleLogout = () => {
@@ -18,6 +17,11 @@ export default function Sidebar(){
         })
     }
     
+    const navTo = (url) => {
+        // console.log(url);
+        navigate(url);
+    }
+
     return(
         <SDesign.SidebarStack >
             <SDesign.LogoBox>
@@ -32,14 +36,14 @@ export default function Sidebar(){
             <SDesign.SidebarList>
 
                 <SDesign.SidebarItem >
-                    <SDesign.SidebarBtn component="a" href="#home">
+                    <SDesign.SidebarBtn component="a" onClick={() => navTo("/user/dashboard")}>
                         <SDesign.SidebarIcon><DashboardOutlined /></SDesign.SidebarIcon>
                         <SDesign.SidebarText>Dashboard </ SDesign.SidebarText>
                     </SDesign.SidebarBtn>
                 </SDesign.SidebarItem>
 
                 <SDesign.SidebarItem disablePadding>
-                    <SDesign.SidebarBtn component="a" href="#home">
+                    <SDesign.SidebarBtn component="a" onClick={() => navTo("/user/newproc")}>
                         <SDesign.SidebarIcon><AssignmentOutlined /></SDesign.SidebarIcon>
                         <SDesign.SidebarText>Procurement </ SDesign.SidebarText>
                     </SDesign.SidebarBtn>
@@ -60,7 +64,7 @@ export default function Sidebar(){
                 </SDesign.SidebarItem>
 
                 <SDesign.SidebarItem disablePadding>
-                    <SDesign.SidebarBtn component="a" onClick={handleLogout}>
+                    <SDesign.SidebarBtn component="a" onClick={() => handleLogout()}>
                         <SDesign.SidebarIcon><Logout /></SDesign.SidebarIcon>
                         <SDesign.SidebarText>Sign Out </ SDesign.SidebarText>
                     </SDesign.SidebarBtn>

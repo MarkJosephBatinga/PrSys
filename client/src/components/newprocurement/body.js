@@ -4,7 +4,7 @@ import { Stack } from "@mui/system";
 import ModeOfPrSelect from "./modeOfPr";
 
 
-export default function Body(){
+export default function NewProc(){
     return(
 
         <Stack>

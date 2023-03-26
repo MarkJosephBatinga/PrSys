@@ -4,6 +4,7 @@ import ErrorPage from '../components/error/index';
 import Dashboard from '../components/dashboard/dashboard';
 import UserDash from './userdash';
 import CheckEmail from '../components/checkemail/checkEmail';
+import NewProc from '../components/newprocurement/body';
 
 const MainRoutes = [
     {
@@ -27,7 +28,12 @@ const MainRoutes = [
         path: 'dashboard',
         element: <Dashboard />,
         errorElement: <ErrorPage />,
-      }
+      },
+      {
+        path: 'newproc',
+        element: <NewProc />,
+        errorElement: <ErrorPage />,
+      },
     ]
     }
   ]

@@ -8,8 +8,6 @@ import Header from '../components/header/header';
 import { Outlet } from 'react-router-dom';
 import { Stack } from '@mui/system';
 
-
-
 export default function UserDash() {
     const [user, loading] = useAuthState(auth);
     const [ userData, setUserData ] = useState([]);
